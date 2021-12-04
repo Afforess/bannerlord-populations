@@ -10,7 +10,8 @@ namespace Populations.Helpers
 {
     public static class Helpers
     {
-        public static BuildingType _buildingCastleRetinue = Game.Current.ObjectManager.RegisterPresumedObject<BuildingType>(new BuildingType("building_castle_retinue"));
+        public static BuildingType _buildingCastleRetinue = Game.Current.ObjectManager.RegisterPresumedObject<BuildingType>(new BuildingType("building_populations_castle_retinue"));
+        public static BuildingType _buildingCastleSmith = Game.Current.ObjectManager.RegisterPresumedObject<BuildingType>(new BuildingType("building_populations_castle_blacksmith"));
         public static int GetRosterCount(TroopRoster roster)
         {
             List<TroopRosterElement> rosters = roster.GetTroopRoster();

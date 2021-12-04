@@ -38,6 +38,7 @@
     <Reference Include="Bannerlord.Harmony, Version=2.1.1.65, Culture=neutral, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
+    <Reference Include="Bannerlord.UIExtenderEx, Version=2.1.8.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="SandBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <Private>False</Private>
     </Reference>
@@ -125,6 +126,7 @@
     <Compile Include="UI\PopulationVillageVM.cs" />
     <Compile Include="UI\PopulationVM.cs" />
     <Compile Include="UI\PopulationWindow.cs" />
+    <Compile Include="UI\PrefabPatches.cs" />
     <Compile Include="UI\UIManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

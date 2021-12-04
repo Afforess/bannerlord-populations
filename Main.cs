@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using Bannerlord.UIExtenderEx;
+using HarmonyLib;
 using Populations.Behaviors;
 using Populations.Models;
 using System;
@@ -17,6 +18,7 @@ namespace Populations
     public class Main : MBSubModuleBase
     {
         public static Harmony patcher = new Harmony("Patcher");
+        private readonly UIExtender extender = new UIExtender("Populations");
 
         protected override void OnGameStart(Game game, IGameStarter gameStarter)
         {
@@ -47,6 +49,9 @@ namespace Populations
         {
             new Harmony("Populations").PatchAll();
             base.OnSubModuleLoad();
+
+            extender.Register(typeof(Main).Assembly);
+            extender.Enable();
         }
     }
 
@@ -114,6 +119,15 @@ namespace Populations
             static bool Prefix()
             {
                 Helpers.Helpers._buildingCastleRetinue.Initialize(new TextObject("{=!}Retinue Barracks", null), new TextObject("{=!}Barracks for the castle retinue, a group of elite soldiers. The retinue is added to the garrison over time, up to a limit of 20, 40 or 60 (building level).", null), new int[]
+                {
+                     1000,
+                     1500,
+                     2000
+                }, BuildingLocation.Castle, new Tuple<BuildingEffectEnum, float, float, float>[]
+                {
+                }, 0);
+
+                Helpers.Helpers._buildingCastleSmith.Initialize(new TextObject("{=!}Blacksmith", null), new TextObject("{=!}Barracks for the castle retinue, a group of elite soldiers. The retinue is added to the garrison over time, up to a limit of 20, 40 or 60 (building level).", null), new int[]
                 {
                      1000,
                      1500,

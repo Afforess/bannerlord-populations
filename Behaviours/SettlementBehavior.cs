@@ -284,18 +284,6 @@ namespace Populations.Behaviors
                             settlement.Culture = settlement.Owner.Culture;
                     }
 
-            BuildingType retinueType = MBObjectManager.Instance.GetObjectTypeList<BuildingType>().FirstOrDefault(x => x == Helpers.Helpers._buildingCastleRetinue);
-            if (retinueType == null)
-            {
-                Helpers.Helpers._buildingCastleRetinue.Initialize(new TextObject("{=!}Retinue Barracks", null), new TextObject("{=!}Barracks for the castle retinue, a group of elite soldiers. The retinue is added to the garrison over time, up to a limit of 20, 40 or 60 (building level).", null), new int[]
-                {
-                     1000,
-                     1500,
-                     2000
-                }, BuildingLocation.Castle, new Tuple<BuildingEffectEnum, float, float, float>[]
-                {
-                }, 0);
-            }
         }
 
         private void AddMenus(CampaignGameStarter campaignGameStarter)
